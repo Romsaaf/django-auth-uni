@@ -11,25 +11,39 @@
         <title>Profile Safiullin</title>
     </head>
     <body>
-        <div class="main">
-            <p align="center" class="sign">Hello</p>
-            <form class="form" method="POST">
-                {% csrf_token %}
-                {% if messages %}
-                    <ul class="messages">
-                        {% for message in messages %}
-                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}
-                                style="color:red">{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-                <input align="center" placeholder="Username" name="username" type="text"/>
-                <input align="center" placeholder="Password" name="password" type="password"/>
-                <button align="center" type="submit">Sign in</button>
-            </form>
-            <p align="center">
-                <a href="register">Don't have an account? Register</a>
-            </p>
+        <div class="container mt-5">
+            <div class="row d-flex h-100 d-flex align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <div class="card p-3 py-4 position-absolute top-50 start-50 translate-middle">
+                        <div class="text-center mx-auto justify-content-center">
+                            <p align="center">Login</p>
+                        </div>
+                        <form class="form" method="POST">
+                            {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}
+                                            style="color:red">{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            {% csrf_token %}
+                            <div class="form-group mb-2">
+                                <input align="center" placeholder="Username" class="form-control" name="username" type="text"/>
+                            </div>
+                            <div class="form-group mb-2">
+                                <input align="center" placeholder="Password" class="form-control" name="password" type="password"/>
+                            </div>
+                            <center>
+                                <button align="center" class="btn btn-primary" type="submit">Sign in</button>
+                            </center> 
+                        </form>
+                        <p align="center">
+                            <a href="register">Don't have an account? Register</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

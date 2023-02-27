@@ -33,8 +33,8 @@ def register(request):
         try:
             User.objects.create_user(username, email, password)
             messages.add_message(request, messages.INFO, 'Registration successful.')
-            data = {'name' : 'Roman', 'surname' : 'Safiullin', 'mail' : 'romsaaf@mail.ru', 'job':'Threat Intelligence engineer', 'linked':'https://www.linkedin.com/in/roman-safiullin-a09528252/', 'git':'https://github.com/Romsaaf', 'tg':'https://t.me/romsaaf', 'username':username}
-            return redirect("profile", data)
+            request.session['data'] = {'name' : 'Roman', 'surname' : 'Safiullin', 'mail' : 'romsaaf@mail.ru', 'job':'Threat Intelligence engineer', 'linked':'https://www.linkedin.com/in/roman-safiullin-a09528252/', 'git':'https://github.com/Romsaaf', 'tg':'https://t.me/romsaaf', 'username':username}
+            return redirect("profile")
         except:
             messages.add_message(request, messages.INFO, 'Registration failed.')
             return redirect("register")
