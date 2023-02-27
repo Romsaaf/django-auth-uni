@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/c71c7816cc.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Profile {{ username }}</title>
+</head>
+
+<body>
+
+	<div class="container mt-5">
+		<div class="row d-flex h-100 d-flex align-items-center justify-content-center">
+			<div class="col-md-7">
+				<div class="card p-3 py-4 position-absolute top-50 start-50 translate-middle">
+					<div class="text-center justify-content-center">
+						<img src="{% static 'images/profile_photo.jpg' %}" class="rounded-circle" style="width:200px">
+					</div>
+					<div class="text-center mt-3">
+						<div class="row">
+							<h5 class="mt-2 mb-0">{{ name }}  {{ surname }}</h5>
+							<span>{{ job }} and a magician. Your username is: {{ username }}</span>
+						</div>
+						<div class="row mt-3">
+							<div class="col-md-3">
+							</div>
+							<div class="col-md-2">
+								<a href="{{ linked }}"><i class="fa fa-linkedin fa-2xl" aria-hidden="true"></i></a>
+							</div>
+							<div class="col-md-2">
+								<a href="{{ 'git' }}"><i class="fa fa-github fa-2xl" aria-hidden="true"></i></a>
+							</div>
+							<div class="col-md-2">
+								<a href="{{ 'tg' }}"><i class="fa fa-telegram fa-2xl" aria-hidden="true"></i></a>
+							</div>
+							<div class="col-md-3">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
